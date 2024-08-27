@@ -20,7 +20,7 @@ This project integrates a FastAPI-based backend with a Django frontend to create
 1. **Clone the repository**:
 
     ```bash
-    git clone https://github.com/your-username/llm-powered-chatbot.git
+    git clone https://github.com/UmerMehmood1/KnowledgeBaseChatBot.git
     cd llm-powered-chatbot
     ```
 
