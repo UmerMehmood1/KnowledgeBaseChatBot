@@ -21,7 +21,7 @@ This project integrates a FastAPI-based backend with a Django frontend to create
 
     ```bash
     git clone https://github.com/UmerMehmood1/KnowledgeBaseChatBot.git
-    cd llm-powered-chatbot
+    cd KnowledgeBaseChatBot
     ```
 
 2. **Create a virtual environment**:
@@ -54,7 +54,7 @@ This project integrates a FastAPI-based backend with a Django frontend to create
     Open a new terminal window, activate the virtual environment, and run:
 
     ```bash
-    uvicorn llm_app.main:app --reload --host 127.0.0.2 --port 8080
+    uvicorn api.api:app --reload --host 127.0.0.2 --port 8080
     ```
 
     The FastAPI server should now be running at `http://127.0.0.2:8080`.
@@ -65,21 +65,15 @@ This project integrates a FastAPI-based backend with a Django frontend to create
 2. Type your query in the input box and click "Send."
 3. The chatbot will process your query using the FastAPI backend and return a response.
 
-## Project Structure
-
-- `llm_app/`: Contains the Django app, views, and templates.
-- `llm_app/main.py`: The FastAPI backend script handling query processing.
-- `requirements.txt`: Lists all the dependencies required for the project.
-- `README.md`: This document.
 
 ## Customization
 
-- **Change Models**: To use a different language model, modify the `model_name` parameters in the `main.py` file.
+- **Change Models**: To use a different language model, modify the `model_name` parameter in the `api.py` file.
 - **Frontend Styling**: Customize the UI by editing `llm_app/templates/query_form.html` and updating the CSS.
 
 ## Troubleshooting
 
-- **CORS Issues**: If you encounter CORS errors, ensure that the `allow_origins` in `main.py` is correctly configured to match your frontend's URL.
+- **CORS Issues**: If you encounter CORS errors, ensure that the `allow_origins` in `api.py` is correctly configured to match your frontend's URL.
 - **Model Loading Issues**: If models fail to load, ensure you have an active internet connection or the models are correctly downloaded.
 
 ## License
@@ -94,4 +88,3 @@ Contributions are welcome! Please submit pull requests or open issues for any en
 
 - Hugging Face for providing pre-trained language models.
 - Django and FastAPI communities for excellent web frameworks.
-
