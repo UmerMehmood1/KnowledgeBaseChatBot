@@ -1,0 +1,9 @@
+Django==4.2.3
+djangorestframework==3.14.0
+django-cors-headers==4.0.0
+fastapi==0.103.1
+uvicorn==0.23.0
+httpx==0.24.1
+pydantic==2.1.1
+transformers==4.31.0
+docarray==0.21.0  # For handling document arrays and vector searches
