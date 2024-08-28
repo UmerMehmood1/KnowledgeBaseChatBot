@@ -67,9 +67,9 @@ This project integrates a FastAPI-based backend with a Django frontend to create
 
 ## Demo
 
-<p>Check out a <a href="https://github.com/UmerMehmood1/KnowledgeBaseChatBot/raw/main/demo/KnowledgeBaseChatBotVideo.mp4">video demonstration</a> of the chatbot in action.</p>
+Check out a [video demonstration](https://github.com/UmerMehmood1/KnowledgeBaseChatBot/demo/KnowledgeBaseChatBotVideo.mp4) of the chatbot in action.
 <video width="640" height="480" controls>
-    <source src="https://github.com/UmerMehmood1/KnowledgeBaseChatBot/raw/main/demo/KnowledgeBaseChatBotVideo.mp4" type="video/mp4">
+    <source src="https://github.com/UmerMehmood1/KnowledgeBaseChatBot/demo/KnowledgeBaseChatBotVideo.mp4" type="video/mp4">
     Your browser does not support the video tag. You can download the video <a href="https://github.com/UmerMehmood1/KnowledgeBaseChatBot/raw/main/demo/KnowledgeBaseChatBotVideo.mp4">here</a>.
 </video>
 ## Customization
