@@ -67,9 +67,8 @@ This project integrates a FastAPI-based backend with a Django frontend to create
 
 ## Demo
 
-Check out a [video demonstration](demo/KnowledgeBaseChatBotVideo.mp4) of the chatbot in action.
-<video width="640" height="480" src="demo/KnowledgeBaseChatBotVideo.mp4" type="video/mp4" controls>
-</video>
+Check out a [video demonstration](https://github.com/UmerMehmood1/KnowledgeBaseChatBot/blob/main/demo/KnowledgeBaseChatBotVideo.mp4) of the chatbot in action.
+<video width="640" height="480" src="https://github.com/UmerMehmood1/KnowledgeBaseChatBot/blob/main/demo/KnowledgeBaseChatBotVideo.mp4" type="video/mp4" controls />
 ## Customization
 
 - **Change Models**: To use a different language model, modify the `model_name` parameter in the `api.py` file.
