@@ -1,11 +1,11 @@
 django
-djangorestframework==3.14.0
-django-cors-headers==4.0.0
-fastapi==0.103.1
-uvicorn==0.23.0
-pydantic==2.1.1
-sentence-transformers==4.31.0
+djangorestframework
+django-cors-headers
+fastapi
+uvicorn
+pydantic
+sentence-transformers
 langchain
 langchain-community
 langchain-core
-docarray==0.21.0  # For handling document arrays and vector searches
+docarray
