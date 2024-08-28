@@ -67,11 +67,10 @@ This project integrates a FastAPI-based backend with a Django frontend to create
 
 ## Demo
 
-Check out a [video demonstration](https://youtu.be/kHo18SSzFec) of the chatbot in action.
-<video width="640" height="480" controls>
-    <source src="https://youtu.be/kHo18SSzFec" type="video/mp4">
-    Your browser does not support the video tag. You can download the video <a href="https://youtu.be/kHo18SSzFec">here</a>.
-</video>
+[![Watch the video](https://img.youtube.com/vi/kHo18SSzFec/maxresdefault.jpg)](https://youtu.be/kHo18SSzFec)
+
+Click the image above to watch the video demonstration of the chatbot in action.
+
 ## Customization
 
 - **Change Models**: To use a different language model, modify the `model_name` parameter in the `api.py` file.
