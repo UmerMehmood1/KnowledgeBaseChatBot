@@ -65,6 +65,11 @@ This project integrates a FastAPI-based backend with a Django frontend to create
 2. Type your query in the input box and click "Send."
 3. The chatbot will process your query using the FastAPI backend and return a response.
 
+## Demo
+
+[![Watch the video](https://img.youtube.com/vi/kHo18SSzFec/maxresdefault.jpg)](https://youtu.be/kHo18SSzFec)
+
+Click the image above to watch the video demonstration of the chatbot in action.
 
 ## Customization
 
