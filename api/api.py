@@ -98,7 +98,7 @@ class QueryProcessor:
         documents = "\n".join([doc.page_content for doc in results])
         
         # Generate the summary from the collected document content
-        max_input_length = self.language_model.tokenizer.model_max_length - 50
+        max_input_length = self.language_model.tokenizer.model_max_length - 10
         summary = self.language_model.generate_summary(documents, max_input_length)
         
         # Remove repetitions from the summary before returning
@@ -108,7 +108,7 @@ class QueryProcessor:
 embedding_model = EmbeddingModel(model_name="sentence-transformers/all-MiniLM-L6-v2")
 document_loader = DocumentLoader(file_path='OutdoorClothingCatalog_1000.csv')
 indexer = Indexer(embedding_model, document_loader)
-language_model = LanguageModel(model_name="distilgpt2")
+language_model = LanguageModel(model_name="openai-community/gpt2-large")
 query_processor = QueryProcessor(indexer, language_model)
 @app.get("/")
 async def read_root():
