@@ -21,29 +21,6 @@ app.add_middleware(
     allow_headers=["*"],  # Allow all headers
 )
 
-@app.get("/")
-async def read_root():
-    return {"Hello": "World"}
-
-
-@app.get("/query/{query}")
-async def read_item(query: str):
-    # Initialize components
-    try:
-        embedding_model = EmbeddingModel(model_name="sentence-transformers/all-MiniLM-L6-v2")
-        document_loader = DocumentLoader(file_path='OutdoorClothingCatalog_1000.csv')
-        indexer = Indexer(embedding_model, document_loader)
-        language_model = LanguageModel(model_name="distilgpt2")
-        query_processor = QueryProcessor(indexer, language_model)
-
-        response = query_processor.process_query(query)
-        print(response)
-        return {"response":response}
-    except Exception as e:
-        print(traceback.format_exc())
-        return {"error":e}
-
-
 class EmbeddingModel:
     def __init__(self, model_name: str):
         self.model = HuggingFaceEmbeddings(model_name=model_name)
@@ -85,7 +62,7 @@ class LanguageModel:
         if len(documents) > max_input_length:
             documents = documents[:max_input_length]
 
-        summary_prompt = f"You are an assistant, as an assistant explain about this product to customer: {documents}"
+        summary_prompt = f"You are an assistant, as an assistant explain about this product to customer in 150 words: {documents}"
         summary = self.pipeline(summary_prompt, max_new_tokens=250, num_return_sequences=1)
         return summary[0]['generated_text']
 class QueryProcessor:
@@ -95,7 +72,7 @@ class QueryProcessor:
 
     def remove_repetitions(self, text):
         # Split the text into lines or sentences (based on your needs)
-        text =text.replace("You are an assistant, as an assistant explain about this product to customer: ","")
+        text =text.replace("You are an assistant, as an assistant explain about this product to customer in 150 words: ","")
         lines = text.split('\n')
         
         # Use a set to keep track of unique lines
@@ -126,6 +103,28 @@ class QueryProcessor:
         
         # Remove repetitions from the summary before returning
         return self.remove_repetitions(summary)
+
+
+embedding_model = EmbeddingModel(model_name="sentence-transformers/all-MiniLM-L6-v2")
+document_loader = DocumentLoader(file_path='OutdoorClothingCatalog_1000.csv')
+indexer = Indexer(embedding_model, document_loader)
+language_model = LanguageModel(model_name="distilgpt2")
+query_processor = QueryProcessor(indexer, language_model)
+@app.get("/")
+async def read_root():
+    return {"Hello": "World"}
+
+
+@app.get("/query/{query}")
+async def read_item(query: str):
+    # Initialize components
+    try:
+        response = query_processor.process_query(query)
+        print(response)
+        return {"response":response}
+    except Exception as e:
+        print(traceback.format_exc())
+        return {"error":e}
 
 
 if __name__ == '__main__':
