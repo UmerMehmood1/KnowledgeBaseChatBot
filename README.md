@@ -65,7 +65,13 @@ This project integrates a FastAPI-based backend with a Django frontend to create
 2. Type your query in the input box and click "Send."
 3. The chatbot will process your query using the FastAPI backend and return a response.
 
+## Demo
 
+Check out a [video demonstration](demo/KnowledgeBaseChatBotVideo.mp4) of the chatbot in action.
+<video width="640" height="480" controls>
+    <source src="{% static 'demo/KnowledgeBaseChatBotVideo.mp4' %}" type="video/mp4">
+    Your browser does not support the video tag.
+</video>
 ## Customization
 
 - **Change Models**: To use a different language model, modify the `model_name` parameter in the `api.py` file.
